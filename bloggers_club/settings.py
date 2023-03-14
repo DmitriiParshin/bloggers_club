@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
     "about.apps.AboutConfig",
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +39,7 @@ INTERNAL_IPS = [
 
 ROOT_URLCONF = "bloggers_club.urls"
 
-TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+TEMPLATES_DIR = BASE_DIR / "templates"
 
 TEMPLATES = [
     {
@@ -89,10 +90,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "static/"
+# STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = (BASE_DIR / 'static',)
 
-MEDIA_URL = "/media/"
+
+MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
