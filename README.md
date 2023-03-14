@@ -10,8 +10,8 @@
 ## Запуск проекта
 1. Клонируйте репозиторий с проектом и перейдите в каталог с ним:
 ```
-git clone https://github.com/DmitriiParshin/world_of_recipes
-cd world_of_recipes
+git clone https://github.com/DmitriiParshin/bloggers_club
+cd bloggers_club
 ```
 2. Создайте файл `.env` и заполните его как показано на примере:
 ```
