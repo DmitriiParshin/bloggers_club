@@ -22,8 +22,7 @@ DB_NAME=YOUR_DB_NAME
 DB_USER=YOUR_DB_USER  
 DB_PASSWORD=YOUR_DB_PASSWORD  
 DB_HOST=YOUR_DB_HOST  
-DB_PORT=YOUR_DB_PORT_  
-
+DB_PORT=YOUR_DB_PORT_
 3. Запустите контейнеры:
 ```
 sudo docker-compose up -d --build
@@ -41,6 +40,6 @@ sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 sudo docker-compose exec web python manage.py createsuperuser
 ```
-Перейдите на http://localhost:8000/ и авторизуйтесь
+Перейдите на http://localhost/auth/login/ и авторизуйтесь
 ## Автор
 [Паршин Дмитрий](https://github.com/DmitriiParshin)

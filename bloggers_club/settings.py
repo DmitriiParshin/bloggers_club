@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="SUP3R-S3CR3T-K3Y-F0R-MY-PR0J3CT")
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "web"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -61,10 +61,14 @@ TEMPLATES = [
 WSGI_APPLICATION = "bloggers_club.wsgi.application"
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+        "default": {
+            "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.postgresql"),
+            "NAME": os.getenv("DB_NAME", "postgres"),
+            "USER": os.getenv("POSTGRES_USER", "postgres"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
+            "HOST": os.getenv("DB_HOST", "localhost"),
+            "PORT": os.getenv("DB_PORT", 5432),
+        }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -91,8 +95,8 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-# STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = (BASE_DIR / 'static',)
+STATIC_ROOT = BASE_DIR / "static"
+# STATICFILES_DIRS = (BASE_DIR / 'static',)
 
 
 MEDIA_URL = "media/"
